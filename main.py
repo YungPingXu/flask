@@ -9,8 +9,9 @@ def index():
 
 @app.route('/send', methods=['GET', 'POST'])
 def send():
-    print(request.args)
-    return request.args
+    args = request.args.to_dict()
+    print(args)
+    return args
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
