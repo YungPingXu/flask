@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect, url_for
 import os
 
 app = Flask(__name__, static_folder='static')
@@ -11,7 +11,7 @@ def index():
 def send():
     args = request.args.to_dict()
     print(args)
-    return args
+    return redirect('https://discord.com')
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
