@@ -14,7 +14,7 @@ def send():
     args = request.args.to_dict()
     print(args)
     console_list.append(args)
-    return redirect('https://discord.com')
+    return redirect('https://google.com')
 
 @app.route('/backend', methods=['GET'])
 def backend():
