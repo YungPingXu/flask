@@ -18,7 +18,7 @@ def send():
 
 @app.route('/backend', methods=['GET'])
 def backend():
-    return console_list
+    return str(console_list)
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
